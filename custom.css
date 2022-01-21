@@ -1,0 +1,34 @@
+body {
+  background: #233f87;
+  font-family: Lato,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  position: relative;
+  border-bottom: 1px thick;
+}
+
+.jumbotron .container {
+  max-width: 950px;
+  position: relative;
+  padding:none;
+}
+
+.jumbotron p {
+  font-size: 1.1em;
+  margin-bottom: 1.5rem;
+}
+
+.packages {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.hovercard:hover{
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.category {
+  font-style: italic;
+}
