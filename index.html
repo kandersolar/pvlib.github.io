@@ -29,13 +29,12 @@ title: pvlib
   </div>
 </div>
 
-
-<div class="packages" style="background:white;padding-top:2em;">
+<div class="example" style="background:white;padding-top:2em;">
   <div class="container">
-
     <div class="row">
-      <div class="col-lg-6" style="text-align:center;color:rgb(100,130,130)">
-        <h2>Example: PVWatts Emulator</h2>
+      <div class="col-lg-3" style="text-align:center;color:rgb(100,130,130)">
+        <h3>Example:</h3>
+        <h4>PVWatts Emulator</h4>
         <p>
         See how the venerable PVWatts calculator can be recreated in just a
         few lines of code with pvlib!  Of course this is just the beginning...
@@ -43,10 +42,10 @@ title: pvlib
         to see more examples of what you can do with pvlib.
         </p>
       </div>
-      <div class="col-lg-6" style="text-align:left">
+      <div class="col-lg-9" style="text-align:left">
         <div class="card">
           <div class="card-body">
-```python
+{% highlight python %}
 import pvlib
 tmy, _ = pvlib.iotools.get_psm3(latitude=40, longitude=-80, api_key='...',
                                 email='...', map_variables=True)
@@ -59,11 +58,17 @@ location = pvlib.location.Location(40, -80)
 mc = pvlib.modelchain.ModelChain.with_pvwatts(system, location)
 mc.run_model(tmy)
 print("Annual Production:", mc.results.ac.sum())
-```
+{% endhighlight %}
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+<div class="packages" style="background:white;padding-top:2em;">
+  <div class="container">
 
     <div class="row">
       <div class="col-md-12" style="text-align:center;color:rgb(100,130,130)">

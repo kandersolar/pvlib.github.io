@@ -32,8 +32,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-kramdown:
-  syntax_highlighter: rouge
+highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default.
