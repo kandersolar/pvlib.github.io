@@ -32,6 +32,39 @@ title: pvlib
 
 <div class="packages" style="background:white;padding-top:2em;">
   <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6" style="text-align:center;color:rgb(100,130,130)">
+        <h2>Example: PVWatts Emulator</h2>
+        <p>
+        See how the venerable PVWatts calculator can be recreated in just a
+        few lines of code with pvlib!  Of course this is just the beginning...
+        see our <a href="https://pvlib-python.readthedocs.io/en/stable/gallery/index.html">Example Gallery</a>
+        to see more examples of what you can do with pvlib.
+        </p>
+      </div>
+      <div class="col-lg-6" style="text-align:left">
+        <div class="card">
+          <div class="card-body">
+```python
+import pvlib
+tmy, _ = pvlib.iotools.get_psm3(latitude=40, longitude=-80, api_key='...',
+                                email='...', map_variables=True)
+tcell_params = pvlib.temperature.TEMPERATURE_MODEL_PARAMETERS['sapm']['open_rack_glass_polymer']
+system = pvlib.pvsystem.PVSystem(surface_tilt=20, surface_azimuth=180,
+                                 module_parameters=dict(pdc0=1000, gamma_pdc=-0.004),
+                                 temperature_model_parameters=tcell_params,
+                                 inverter_parameters=dict(pdc0=1050))
+location = pvlib.location.Location(40, -80)
+mc = pvlib.modelchain.ModelChain.with_pvwatts(system, location)
+mc.run_model(tmy)
+print("Annual Production:", mc.results.ac.sum())
+```
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-12" style="text-align:center;color:rgb(100,130,130)">
         <h2>Friends of pvlib</h2>
